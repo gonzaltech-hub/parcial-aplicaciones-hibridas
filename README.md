@@ -55,7 +55,8 @@ Este proyecto va un poco más allá de los requisitos básicos e implementa las 
 1.  Clonar el repositorio: `git clone https://github.com/gonzaltech-hub/parcial-aplicaciones-hibridas.git`
 2.  Instalar las dependencias: `npm install`
 3.  Crear un archivo `.env` en la raíz del proyecto y configurar las siguientes variables:
-    ```    PORT=3000
+    ```
+    PORT=3000
     URI_DB=<Conexión>
     ```
 4.  Iniciar el servidor con el comando:
