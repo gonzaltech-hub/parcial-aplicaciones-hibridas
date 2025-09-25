@@ -13,7 +13,7 @@ Esta es una API RESTful desarrollada como parte del primer parcial de la materia
 
 ## Una Nota sobre la Implementación
 
-*   **Sistema de Módulos:** A lo largo del proyecto verán que utilizo CommonJS y no ES Modules. Esta fue una decisión consciente para apegarme al sistema CommonJS, como el standard de Express. Me pareció la forma más simple y robusta de estructurar el código para este parcial, asegurando que todo fuera consistente.
+*   **Sistema de Módulos:** A lo largo del proyecto verán que utilizo CommonJS y no ES Modules. Esta fue una decisión consciente para apegarme al sistema CommonJS. Me pareció la forma más simple y robusta de estructurar el código para este parcial, asegurando que todo fuera consistente.
 
 ---
 
