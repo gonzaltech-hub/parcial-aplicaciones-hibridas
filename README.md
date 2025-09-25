@@ -59,8 +59,12 @@ Este proyecto va un poco más allá de los requisitos básicos e implementa las 
     PORT=3000
     URI_DB=<Conexión>
     ```
-4.  Iniciar el servidor con el comando:
+4.  Iniciar el servidor en **modo producción** (se ejecuta una sola vez):
     ```
     npm start
     ```
-5.  La API estará disponible en `http://localhost:3000`.
+5.  O iniciar el servidor en **modo desarrollo** (con reinicio automático al guardar cambios):
+    ```
+    npm run dev
+    ```
+6.  La API estará disponible en `http://localhost:3000`.

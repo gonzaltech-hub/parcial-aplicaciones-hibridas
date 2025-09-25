@@ -1,14 +1,15 @@
 {
   "name": "parcial-hibridas",
   "version": "1.0.0",
-  "description": "",
+  "description": "API RESTful de Películas y Directores para el primer parcial.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "node --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gonzalez, Agustin",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
