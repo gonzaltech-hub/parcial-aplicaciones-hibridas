@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de Gestión de Películas</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>API de Gestión de Películas</h1>
+        <p>Una API para administrar una colección de películas y directores.</p>
+    </header>
+
+    <div class="container">
+        <main>
+            <h2>Acerca de esta API</h2>
+            <p>Este proyecto es una API RESTful completamente funcional construida con <strong>Node.js, Express y MongoDB</strong>. Permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre recursos de películas y directores.
+            </p>
+            <h3>Características Principales</h3>
+            <ul>
+                <li><strong>Gestión (CRUD):</strong> Soporte para crear, leer, actualizar y eliminar películas y directores.</li>
+                <li><strong>Búsqueda:</strong> Búsqueda de películas por título y listado de películas por director.</li>
+                <li><strong>Consultas:</strong> Paginación y ordenamiento en el listado de películas.</li>
+                <li><strong>Estructura:</strong> Desarrollada para una separación de responsabilidades.</li>
+            </ul>
+            <h3>Visión a Futuro</h3>
+            <p>En futuras versiones, planeo expandir la funcionalidad para incluir nuevos recursos como <strong>Series</strong>, <strong>Actores</strong> y <strong>reseñas de usuarios</strong>, convirtiendola en una solución para la gestión de contenido en general.
+            </p>
+            <hr>
+            <h2>Endpoints de Directores</h2>     
+            <!-- GET Todos los directores -->
+            <div class="endpoint-card">
+                 <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <span class="endpoint-path">/api/directores</span>
+                </div>
+                <p>Obtiene una lista de todos los directores.</p>
+            </div>
+                        <!-- GET Peliculas por director -->
+            <div class="endpoint-card">
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <span class="endpoint-path">/api/directores/:id/peliculas</span>
+                </div>
+                <p>Obtiene una lista de todas las películas de un director específico. Reemplazar <code>:id</code> con el ID del director.</p>
+            </div>
+            <!-- POST Crear director -->
+            <div class="endpoint-card">
+                 <div class="endpoint-header">
+                    <span class="method post">POST</span>
+                    <span class="endpoint-path">/api/directores</span>
+                </div>
+                <p>Crea un nuevo director. Se debe enviar el siguiente JSON en el body:</p>
+                 <div class="code-block"><code>{
+    "nombre": "Christopher Nolan",
+    "nacionalidad": "Británico"
+}</code></div>
+            </div>
+            <!-- DELETE Eliminar director -->
+            <div class="endpoint-card">
+                <div class="endpoint-header">
+                    <span class="method delete">DELETE</span>
+                    <span class="endpoint-path">/api/directores/:id</span>
+                </div>
+                <p>Elimina un director específico por su ID. Solo funciona si el director no tiene películas asociadas.</p>
+            </div>
+
+            <h2>Endpoints de Películas</h2>
+            <!-- GET Todas las peliculas -->
+            <div class="endpoint-card">
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <span class="endpoint-path">/api/peliculas</span>
+                </div>
+                <p>Obtiene una lista de todas las películas. Soporta paginación con <code>page</code> y <code>limit</code>, y ordenamiento con <code>sortBy</code> (ej: <code>sortBy=titulo_asc</code>).</p>
+            </div>
+            <!-- GET Peliculas por ID -->
+            <div class="endpoint-card">
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <span class="endpoint-path">/api/peliculas/:id</span>
+                </div>
+                <p>Obtiene una película específica por su ID.</p>
+            </div>
+            <!-- GET Buscar Películas por Título -->
+            <div class="endpoint-card">
+                <div class="endpoint-header">
+                    <span class="method get">GET</span>
+                    <span class="endpoint-path">/api/peliculas/buscar/:termino</span>
+                </div>
+                <p>Busca películas cuyo título coincida parcialmente con el término de búsqueda. Reemplazar <code>:termino</code> con la palabra a buscar.</p>
+            </div>
+            <!-- POST Crear pelicula -->
+            <div class="endpoint-card">
+                <div class="endpoint-header">
+                    <span class="method post">POST</span>
+                    <span class="endpoint-path">/api/peliculas</span>
+                </div>
+                <p>Crea una nueva película. Se debe enviar el siguiente JSON en el body de la petición:</p>
+                <div class="code-block"><code>{
+    "titulo": "Interestelar",
+    "genero": "Ciencia Ficción",
+    "añoEstreno": 2014,
+    "director": "ID_DEL_DIRECTOR_CREADO_PREVIAMENTE",
+    "duracion": 169,
+    "calificacion": 10
+}</code></div>
+            </div>
+            <!-- PUT Actualizar pelicula -->
+            <div class="endpoint-card">
+                <div class="endpoint-header">
+                    <span class="method put">PUT</span>
+                    <span class="endpoint-path">/api/peliculas/:id</span>
+                </div>
+                <p>Actualiza una película existente. Se pueden enviar uno o más campos en el body:</p>
+                 <div class="code-block"><code>{
+    "añoEstreno": 2025
+}</code></div>
+            </div>
+            <!-- DELETE Eliminar pelicula -->
+            <div class="endpoint-card">
+                <div class="endpoint-header">
+                    <span class="method delete">DELETE</span>
+                    <span class="endpoint-path">/api/peliculas/:id</span>
+                </div>
+                <p>Elimina una película específica por su ID.</p>
+            </div>
+            <hr>
+        </main>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p><strong>Alumno:</strong> Gonzalez, Agustin.</p>
+            <p><strong>Materia:</strong> Aplicaciones Híbridas.</p>
+            <p><strong>Docente:</strong> Cruz, Jonathan Emanuel.</p>
+            <p><strong>Comisión:</strong> DWN4AV.</p>
+        </div>
+    </footer>
+</body>
+</html>
